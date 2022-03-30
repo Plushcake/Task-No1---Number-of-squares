@@ -7,13 +7,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class SQRServiceTest {
 
     @Test
-    void shouldCalculateSqrMath() {
-        SQRService service = new SQRService (); // Создаю сервис.
-        int expected = 15; // Ожидаемый
-        int actual = service.calculateSqrMath (200, 300);
+    void boundaryRangeSqrLow() {
+        SQRService service = new SQRService(); // Создаю сервис.
+        int expected = 3; // Ожидаемый
+        int actual = service.boundaryRangeSqr(200, 300);
 
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void boundaryRangeSqrHigh() {
+        SQRService service = new SQRService(); // Создаю сервис.
+        int expected = 3; // Ожидаемый
+        int actual = service.boundaryRangeSqr(400, 500);
+
+
+        assertEquals(expected, actual);
 
     }
 }
